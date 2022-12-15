@@ -75,8 +75,8 @@ Pod::Spec.new do |s|
     s.public_header_files = 'opencv2.framework/Versions/A/Headers/**/*{.h,.hpp}'
     s.requires_arc = true
     s.static_framework = true
-    #s.header_dir       = 'opencv2'
-    #s.header_mappings_dir = 'opencv2.framework/Versions/A/Headers/'
+    s.header_dir       = 'opencv2'
+    s.header_mappings_dir = 'opencv2.framework/Versions/A/Headers/'
     s.libraries        = 'stdc++'
 
     # Supported deployment targets
