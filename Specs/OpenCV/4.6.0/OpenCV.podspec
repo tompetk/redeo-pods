@@ -67,14 +67,14 @@ Pod::Spec.new do |s|
     s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
     
     # CocoaPods not to remove framework
-    s.preserve_paths = 'opencv2.xcframework'
+    s.preserve_paths = 'opencv2.framework'
     # link opencv2 framework
     s.xcconfig = { 'OTHER_LDFLAGS' => '-framework opencv2' }
 
     s.source_files = 'opencv2.framework/Versions/A/Headers/**/*{.h,.hpp}'
     s.public_header_files = 'opencv2.framework/Versions/A/Headers/**/*{.h,.hpp}'
-    s.requires_arc = true
-    s.static_framework = true
+    s.requires_arc = false
+    #s.static_framework = true
     s.header_dir       = 'opencv2'
     s.header_mappings_dir = 'opencv2.framework/Versions/A/Headers/'
     s.libraries        = 'stdc++'
@@ -83,6 +83,6 @@ Pod::Spec.new do |s|
     s.ios.deployment_target  = "9.0"
 
     # Published binaries
-    s.vendored_frameworks = "opencv2.xcframework"
+    s.vendored_frameworks = "opencv2.framework"
 
   end
